@@ -77,14 +77,14 @@ $(function() {
          * a single .entry element within the .feed container.
          */
         it('has atleast a single entry', function(done) {
-            expect(document.querySelectorAll('.entry-link')).not.toBe(0);
+            expect(document.querySelectorAll('.feed .entry-link')).not.toBe(0);
             done();
         });
     });
 
     /// Tests if loadFeed() gives out diffrent entries
     describe('New Feed Selection', function() {
-        let feedEntry = document.querySelectorAll('.entry-link'),
+        let feedEntry,
             feedOne = {},
             feedTwo = {};
 
@@ -92,6 +92,7 @@ $(function() {
         /// gets first entries diffrent loadfeeds() and assigns them to variables
         beforeEach(function(done) {
             loadFeed(0, function() {
+                feedEntry = document.querySelectorAll('.entry-link');
                 feedOne[0] = feedEntry[0];
 
                 loadFeed(1, function() {
