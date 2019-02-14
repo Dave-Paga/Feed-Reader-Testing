@@ -78,6 +78,7 @@ $(function() {
          */
         it('has atleast a single entry', function(done) {
             expect(document.querySelectorAll('.feed .entry-link')).not.toBe(0);
+            expect(document.querySelectorAll('.feed .entry-link').length).not.toBeLessThan(1);
             done();
         });
     });
